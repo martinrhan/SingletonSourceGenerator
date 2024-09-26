@@ -1,6 +1,8 @@
 ﻿using Microsoft.CodeAnalysis;
 using System;
 
+namespace SingletonSourceGenerator;
+
 [Generator]
 public class SingletonGenerator : IIncrementalGenerator {
     public void Initialize(IncrementalGeneratorInitializationContext context) {

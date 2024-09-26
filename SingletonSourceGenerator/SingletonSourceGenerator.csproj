@@ -7,11 +7,28 @@
 	<IsRoslynComponent>true</IsRoslynComponent>
 	<LangVersion>latest</LangVersion>
 	<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Authors>Martin R. Han</Authors>
+	<Version>1.0.1</Version>
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+
+	<IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" PrivateAssets="all"/>
+	<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" PrivateAssets="all" />
 	<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
+	<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
   </ItemGroup>
 
+  <ItemGroup>	
+	<None Include="$(OutputPath)\SingletonSourceGenerator.Attributes.dll" Pack="true" PackagePath="lib\$(TargetFramework)" />		
+	<None Include="$(OutputPath)\SingletonSourceGenerator.dll" Pack="true" PackagePath="analyzers\$(TargetFramework)" />
+	<None Include="$(SolutionDir)\README.md" Pack="true" PackagePath="\" />
+	<None Include="$(SolutionDir)\LICENSE.txt" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 </Project>
