@@ -14,7 +14,7 @@ This will generate
 ```
 namespace MyNamespace;
 
-public partial class MyClass{
+partial class MyClass{
 	private static MyClass? instance;
 	public static MyClass Instance => instance ??= new();
 }
