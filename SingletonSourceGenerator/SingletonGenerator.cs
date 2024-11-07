@@ -21,7 +21,7 @@ public class SingletonGenerator : IIncrementalGenerator {
             string code = $$"""
             #nullable enable
             namespace {{ts.ContainingNamespace}};
-            public partial class {{ts.Name}}{
+            partial class {{ts.Name}}{
                 private static {{ts.Name}}? instance;
                 public static {{ts.Name}} Instance => instance ??= new();
             }
