@@ -7,7 +7,7 @@ using SingletonSourceGenerator.Attributes;
 namespace MyNamespace;
 
 [Singleton]
-public patial class MyClass{
+public partial class MyClass{
 }
 ```
 This will generate
